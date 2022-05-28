@@ -89,7 +89,7 @@ const RegisterScreen = (location) => {
             <Col>
             Have an Account? {' '}
             <Link to={redirect ? `/login?redirect=${redirect}` 
-            :'/login'}>Register</Link>
+            :'/login'}>Login</Link>
             </Col>
         </Row>
         </FormContainer>

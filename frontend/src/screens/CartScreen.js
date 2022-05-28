@@ -9,13 +9,15 @@ import { addToCart, removeFromCart } from '../actions/cartActions'
 const CartScreen = () => {
    
     const match = useParams()
-    const navigate = useNavigate()
+    let navigate = useNavigate()
     const location =useLocation()
 
     const productId = match.id
     const qty = new URLSearchParams(location.search).get('qty')
+    const userLogin = useSelector(state => state.userLogin)
+    const { userInfo } = userLogin
     const dispatch = useDispatch()
-
+    
     const cart = useSelector(state => state.cart)
     const {cartItems} = cart
 
@@ -32,7 +34,11 @@ const CartScreen = () => {
     }
 
     const checkoutHandler = () =>{
-        navigate('/login?redirect=shipping')
+        if(userInfo){
+            navigate('/shipping')
+        }else{
+            navigate('/login')
+        }
     }
 
   return (
@@ -85,7 +91,11 @@ const CartScreen = () => {
                          .toFixed(2)}
                      </ListGroup.Item>
                      <ListGroup.Item>
-                         <Button type='button' className = 'btn-block' disabled = {cartItems.length ===0} onClick={checkoutHandler}>Proceed to checkout</Button>
+                         <Button 
+                         type='button' 
+                         className = 'btn-block' 
+                         disabled = {cartItems.length ===0} 
+                         onClick={checkoutHandler}>Proceed to checkout</Button>
                      </ListGroup.Item>
                  </ListGroup>
              </Card>                          
