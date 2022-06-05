@@ -7,7 +7,14 @@ import Product from '../models/productModel.js'
 
 
 const getProducts = asyncHandler(async (req, res) =>{
-    const products = await Product.find({})
+    const keyword = req.query.keyword ? {
+        name:{
+            $regex:req.query.keyword,
+            $options:'i'
+        }
+    } : {} 
+
+    const products = await Product.find({ ...keyword })
     res.json(products)
 
 })
@@ -98,4 +105,18 @@ const updateProduct = asyncHandler(async (req, res) =>{
 })
 
 
-export {getProducts, getProductById, deleteProduct,createProduct,updateProduct}
+//@description Get top rated products
+//@route PUT /api/products/top
+//@access Public
+
+const getTopProducts = asyncHandler(async (req, res) =>{
+    const products = await Product.find({}).sort({ rating:-1 }).limit(4)
+
+    res.json(products)
+    
+  
+
+})
+
+
+export {getProducts, getProductById, deleteProduct,createProduct,updateProduct,getTopProducts}
