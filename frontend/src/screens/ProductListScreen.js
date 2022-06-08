@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { LinkContainer} from 'react-router-bootstrap'
 import { Table, Button, Row, Col } from 'react-bootstrap'
 import { useDispatch, useSelector} from 'react-redux'
@@ -11,7 +11,7 @@ import { PRODUCT_CREATE_RESET } from '../constants/productConstants'
 const ProductListScreen = () => {
   const dispatch = useDispatch()
   const navigate = useNavigate()
-  const match = useParams()
+
 
   const productList = useSelector( state=> state.productList)
   const {loading, error, products} = productList
@@ -56,11 +56,11 @@ const ProductListScreen = () => {
     <>
     <Row className='align-items-center'>
         <Col>
-            <h1>Products</h1>
+            <h1>Produs</h1>
         </Col>
         <Col className='text-center'>
             <Button className='my-3' onClick={createProductHandler}>
-               <i className='fas fa-plus'></i> Create Product
+               <i className='fas fa-plus'></i> Creeaza produs
             </Button>
         </Col>
     </Row>
@@ -74,9 +74,9 @@ const ProductListScreen = () => {
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>NAME</th>
-                    <th>PRICE</th>
-                    <th>CATEGORY</th>
+                    <th>NUME</th>
+                    <th>PRET</th>
+                    <th>CATEGORIE</th>
                     <th>BRAND</th>
                     <th></th>
                 </tr>
@@ -87,7 +87,7 @@ const ProductListScreen = () => {
                         <td>{product._id}</td>
                         <td>{product.name}</td>
                         <td>
-                            ${product.price}
+                            RON {product.price}
                         </td>
                         <td>
                             {product.category}

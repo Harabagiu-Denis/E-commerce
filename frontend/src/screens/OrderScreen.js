@@ -68,38 +68,38 @@ const OrderScreen = () => {
 
   return loading ? <Loader /> : error ? <Message variant = 'danger' >{error}
   </Message>: <>
-       <h1>Order {order._id}</h1>
+       <h1>Comanda {order._id}</h1>
        <Row>
         <Col md={8}>
             <ListGroup variant = 'flush'>
                 <ListGroup.Item>
-                    <h2>Shipping</h2>
-                    <p><strong>Name:</strong>{order.user.name}</p>
+                    <h2>Livrare</h2>
+                    <p><strong>Nume:</strong>{order.user.name}</p>
                     <p>
                         <strong>Email: </strong>{' '}
                         <a href={`mailto:${order.user.email}`}>{order.user.email}</a></p>
                     <p>
-                        <strong>Address: </strong>
+                        <strong>Adesa </strong>
                         {order.shippingAddress.address}, {order.shippingAddress.city}{' '}
                         ,{order.shippingAddress.postalCode}, {' '}{order.shippingAddress.country}
                     </p>
-                    {order.isDelivered ? <Message variant='success'>Delivered on {order.deliveredAt}</Message> 
-                    :<Message variant='danger'>Not Delivered</Message>}
+                    {order.isDelivered ? <Message variant='success'>Livrat la {order.deliveredAt}</Message> 
+                    :<Message variant='danger'>Nu a fost livrat</Message>}
                 </ListGroup.Item>
                 <ListGroup.Item>
-                    <h2>Payment Method</h2>
+                    <h2>Metoda de Plata</h2>
                     <p>
-                    <strong>Method: </strong>
-                    {order.paymentMethod="PayPal"}
+                    <strong>Metoda </strong>
+                    {order.paymentMethod="Numerar"}
                     </p>
-                    {order.isPaid ? <Message variant='success'>Paid on {order.paidAt}</Message> 
-                    :<Message variant='danger'>Not Paid</Message>}
+                    {order.isPaid ? <Message variant='success'>Platit la {order.paidAt}</Message> 
+                    :<Message variant='danger'>Nu a fost platit</Message>}
                 </ListGroup.Item>
                 
                 
                 <ListGroup.Item>
-                    <h2>Order Items</h2>
-                    {order.orderItems.length === 0 ? <Message>Order is Empty</Message>
+                    <h2>Obiectele comenzii</h2>
+                    {order.orderItems.length === 0 ? <Message>Comanda este goala</Message>
                     :(
                         <ListGroup variant='flush'>
                             {order.orderItems.map((item, index) =>(
@@ -115,7 +115,7 @@ const OrderScreen = () => {
                                             </Link>
                                         </Col>
                                         <Col md={4}>
-                                            {item.qty} x ${item.price} = ${item.qty * item.price}
+                                            {item.qty} x RON{item.price} = RON{item.qty * item.price}
                                         </Col>
                                     </Row>
                                 </ListGroup.Item>
@@ -130,37 +130,37 @@ const OrderScreen = () => {
             <Card>
                 <ListGroup variant='flush'>
                     <ListGroup.Item>
-                        <h2>Order Summary</h2>
+                        <h2>Sumarul Comenzii</h2>
                     </ListGroup.Item>
                     <ListGroup.Item>
                         <Row>
-                            <Col>Items</Col>
-                            <Col>${order.itemsPrice}</Col>
+                            <Col>Obiecte</Col>
+                            <Col>RON {order.itemsPrice}</Col>
                         </Row>
                     </ListGroup.Item>
                     <ListGroup.Item>
                         <Row>
-                            <Col>Shipping</Col>
-                            <Col>${order.shippingPrice}</Col>
+                            <Col>Cost Livrare</Col>
+                            <Col>RON {order.shippingPrice}</Col>
                         </Row>
                     </ListGroup.Item>
                     <ListGroup.Item>
                         <Row>
-                            <Col>Tax</Col>
-                            <Col>${order.taxPrice}</Col>
+                            <Col>Taxe</Col>
+                            <Col>RON {order.taxPrice}</Col>
                         </Row>
                     </ListGroup.Item>
                     <ListGroup.Item>
                         <Row>
                             <Col>Total</Col>
-                            <Col>${order.totalPrice}</Col>
+                            <Col>RON {order.totalPrice}</Col>
                         </Row>
                     </ListGroup.Item>
                     {loadingPay && <Loader/>}
                     {userInfo.isAdmin && !order.isPaid &&(
                        <ListGroup.Item>
                             <Button type = 'button' className='btn col-12' onClick={succesPaymentHandler}>
-                                Mark as Paid
+                                Comanda platita
                             </Button>
                        
                        </ListGroup.Item> 
@@ -169,7 +169,7 @@ const OrderScreen = () => {
                     {userInfo && userInfo.isAdmin  && !order.isDelivered && (
                         <ListGroup.Item>
                             <Button type = 'button' className='btn col-12' onClick={deliverHandler}>
-                                Mark as Delivered
+                                Comanda livrata
                             </Button>
                         </ListGroup.Item>
                     )}

@@ -19,7 +19,7 @@ const Header = () => {
         <Navbar bg="dark" variant = 'dark' expand="lg" collapseOnSelect>
   <Container>
     <LinkContainer to ='/'>
-    <Navbar.Brand>ProShop</Navbar.Brand>
+    <Navbar.Brand>Magazin Online</Navbar.Brand>
     </LinkContainer>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
@@ -27,34 +27,34 @@ const Header = () => {
       <Nav className="ms-auto">
       <LinkContainer to ='/cart'>
         <Nav.Link >
-          <i className='fas fa-shopping-cart'></i> Cart
+          <i className='fas fa-shopping-cart'></i> Cos
           </Nav.Link>
           </LinkContainer>
           {userInfo ? (
             <NavDropdown title={userInfo.name} id='username'>
               <LinkContainer to='/profile'>
-                <NavDropdown.Item>Profile</NavDropdown.Item>
+                <NavDropdown.Item>Profil</NavDropdown.Item>
               </LinkContainer>
               <NavDropdown.Item onClick={logoutHandler}>
-                Logout
+                Deconectare
               </NavDropdown.Item>
             </NavDropdown>
           ) :  (<LinkContainer to ='/login'>
           <Nav.Link>
-            <i className='fas fa-user'></i>Sign In
+            <i className='fas fa-user'></i>Autentificare
             </Nav.Link>
             </LinkContainer>
             )}
          {userInfo && userInfo.isAdmin && (
            <NavDropdown title='Admin' id='adminmenu'>
            <LinkContainer to='/admin/userList'>
-             <NavDropdown.Item>Users</NavDropdown.Item>
+             <NavDropdown.Item>Utilizatori</NavDropdown.Item>
            </LinkContainer>
            <LinkContainer to='/admin/productList'>
-             <NavDropdown.Item>Products</NavDropdown.Item>
+             <NavDropdown.Item>Produse</NavDropdown.Item>
            </LinkContainer>
            <LinkContainer to='/admin/orderList'>
-             <NavDropdown.Item>Orders</NavDropdown.Item>
+             <NavDropdown.Item>Comenzi</NavDropdown.Item>
            </LinkContainer>
           
          </NavDropdown>

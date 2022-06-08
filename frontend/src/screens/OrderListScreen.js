@@ -38,11 +38,11 @@ const OrderListScreen = () => {
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>USER</th>
-                    <th>DATE</th>
+                    <th>UTILIZATOR</th>
+                    <th>DATA</th>
                     <th>TOTAL</th>
-                    <th>PAID</th>
-                    <th>DELIVERED</th>
+                    <th>PLATIT</th>
+                    <th>LIVRAT</th>
                 </tr>
             </thead>
             <tbody>
@@ -51,7 +51,7 @@ const OrderListScreen = () => {
                         <td>{order._id}</td>
                         <td>{order.user && order.user.name}</td>
                         <td>{order.createdAt.substring(0,10)}</td>
-                        <td>${order.totalPrice}</td>
+                        <td>RON{order.totalPrice}</td>
                         <td>
                             {order.isPaid ? (order.paidAt.substring(0,10))
                             :(
@@ -69,7 +69,7 @@ const OrderListScreen = () => {
                         <td>
                             <LinkContainer to={`/order/${order._id}`}>
                                 <Button variant='light' className='btn-sm'>
-                                    Details
+                                    Detalii
                                 </Button>
                             </LinkContainer>
                            

@@ -30,7 +30,7 @@ const ProductScreen = () => {
    }
   
     return <>
-    <Link className='btn btn-light my-3' to='/'>Go Back</Link>
+    <Link className='btn btn-light my-3' to='/'>Inapoi</Link>
     {loading ? <Loader/> 
     : error ? <Message variant ='danger'>{error}</Message>:
     (
@@ -49,10 +49,10 @@ const ProductScreen = () => {
                     text={`${product.numReviews} reviews`}/>
                 </ListGroup.Item>
                 <ListGroup.Item>
-                    Price : ${product.price}
+                    Pret : RON {product.price}
                 </ListGroup.Item>
                 <ListGroup.Item>
-                    Description : {product.description}
+                    Descriere : {product.description}
                 </ListGroup.Item>
             </ListGroup>
         </Col>
@@ -62,10 +62,10 @@ const ProductScreen = () => {
                     <ListGroup.Item>
                         <Row>
                             <Col>
-                            Price:
+                            Pret:
                             </Col>
                             <Col>
-                            <strong>${product.price}</strong>
+                            <strong>RON {product.price}</strong>
                             </Col>
                         </Row>
                     </ListGroup.Item>
@@ -84,7 +84,7 @@ const ProductScreen = () => {
                     {product.countInStock > 0 && (
                         <ListGroup.Item>
                             <Row>
-                                <Col>Qty</Col>
+                                <Col>Cantitate</Col>
                                 <Col>
                                 <Form.Control as ='select' value={qty} onChange={(e) =>
                                 setQty(e.target.value)}>
@@ -106,7 +106,7 @@ const ProductScreen = () => {
                         className='btn-block' 
                         type = 'button' 
                         disabled = {product.countInStock === 0}>
-                            Add To Cart
+                            Adauga in cos
                         </Button>
                     </ListGroup.Item>
                 </ListGroup>

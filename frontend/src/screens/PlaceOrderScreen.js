@@ -56,23 +56,23 @@ const PlaceOrderScreen = () => {
         <Col md={8}>
             <ListGroup variant = 'flush'>
                 <ListGroup.Item>
-                    <h2>Shipping</h2>
+                    <h2>Livrare</h2>
                     <p>
-                        <strong>Address: </strong>
+                        <strong>Adresa: </strong>
                         {cart.shippingAddress.address}, {cart.shippingAddress.city}{' '}
                         ,{cart.shippingAddress.postalCode}, {' '}{cart.shippingAddress.country}
                     </p>
                 </ListGroup.Item>
                 <ListGroup.Item>
-                    <h2>Payment Method</h2>
-                    <strong>Method: </strong>
-                    {cart.paymentMethod="PayPal"}
+                    <h2>Metoda de Plata</h2>
+                    <strong>Metoda </strong>
+                    {cart.paymentMethod="Numerar"}
                 </ListGroup.Item>
                 
                 
                 <ListGroup.Item>
-                    <h2>Order Items</h2>
-                    {cart.cartItems.length === 0 ? <Message>Your Cart is Empty</Message>
+                    <h2>Comanda</h2>
+                    {cart.cartItems.length === 0 ? <Message>Cosul de Cumparaturi este gol</Message>
                     :(
                         <ListGroup variant='flush'>
                             {cart.cartItems.map((item, index) =>(
@@ -88,7 +88,7 @@ const PlaceOrderScreen = () => {
                                             </Link>
                                         </Col>
                                         <Col md={4}>
-                                            {item.qty} x ${item.price} = ${item.qty * item.price}
+                                            {item.qty} x RON {item.price} = RON {item.qty * item.price}
                                         </Col>
                                     </Row>
                                 </ListGroup.Item>
@@ -103,30 +103,30 @@ const PlaceOrderScreen = () => {
             <Card>
                 <ListGroup variant='flush'>
                     <ListGroup.Item>
-                        <h2>Order Summary</h2>
+                        <h2>Sumarul comenzii</h2>
                     </ListGroup.Item>
                     <ListGroup.Item>
                         <Row>
-                            <Col>Items</Col>
-                            <Col>${cart.itemsPrice}</Col>
+                            <Col>Obiecte</Col>
+                            <Col>RON {cart.itemsPrice}</Col>
                         </Row>
                     </ListGroup.Item>
                     <ListGroup.Item>
                         <Row>
-                            <Col>Shipping</Col>
-                            <Col>${cart.shippingPrice}</Col>
+                            <Col>Cost livrare</Col>
+                            <Col>RON {cart.shippingPrice}</Col>
                         </Row>
                     </ListGroup.Item>
                     <ListGroup.Item>
                         <Row>
-                            <Col>Tax</Col>
-                            <Col>${cart.taxPrice}</Col>
+                            <Col>Taxe</Col>
+                            <Col>RON {cart.taxPrice}</Col>
                         </Row>
                     </ListGroup.Item>
                     <ListGroup.Item>
                         <Row>
                             <Col>Total</Col>
-                            <Col>${cart.totalPrice}</Col>
+                            <Col>RON {cart.totalPrice}</Col>
                         </Row>
                     </ListGroup.Item>
                             <ListGroup.Item>
@@ -137,7 +137,7 @@ const PlaceOrderScreen = () => {
                         type='button' 
                         disabled={cart.cartItems ===0} 
                         onClick={placeOrderHandler}
-                        >Place Order</Button>
+                        >Plaseaza Comanda</Button>
                     </ListGroup.Item>
                 </ListGroup>
             </Card>

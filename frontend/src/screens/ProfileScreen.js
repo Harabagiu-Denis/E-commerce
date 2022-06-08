@@ -60,64 +60,64 @@ const ProfileScreen = (location) => {
 
   return <Row>
       <Col md={3}>
-      <h2>User Profile</h2>
+      <h2>Profilul utilizatorului</h2>
         {message && <Message variant='danger'>{message}</Message>}
         {error && <Message variant='danger'>{error}</Message>}
-        {success && <Message variant='success'>Profile Updated</Message>}
+        {success && <Message variant='success'>Profil modificat</Message>}
         {loading && <Loader/>}
         
         <Form onSubmit={submitHandler}>
         <Form.Group controlId='name'>
-                <Form.Label>Name</Form.Label>
+                <Form.Label>Nume</Form.Label>
                 <Form.Control 
                 type='name' 
-                placeholder = "Enter name"
+                placeholder = "Introdu Nume"
                 value={name}
                 onChange={(e)=> setName(e.target.value)}></Form.Control>
             </Form.Group>
             <Form.Group controlId='email'>
-                <Form.Label>Email address</Form.Label>
+                <Form.Label>Adresa de Email</Form.Label>
                 <Form.Control 
                 type='email' 
-                placeholder = "Enter email"
+                placeholder = "Introdu adresa de email"
                 value={email}
                 onChange={(e)=> setEmail(e.target.value)}></Form.Control>
             </Form.Group>
 
             <Form.Group controlId='password'>
-                <Form.Label>Password</Form.Label>
+                <Form.Label>Parola</Form.Label>
                 <Form.Control 
                 type='password' 
-                placeholder = "Enter password"
+                placeholder = "Introdu Parola"
                 value={password}
                 onChange={(e)=> setPassword(e.target.value)}></Form.Control>
             </Form.Group>
 
             <Form.Group controlId='confirmPassword'>
-                <Form.Label>Confirm Password</Form.Label>
+                <Form.Label>Confirma Parola</Form.Label>
                 <Form.Control 
                 type='password' 
-                placeholder = "Confirm password"
+                placeholder = "Confirma Parola"
                 value={confirmPassword}
                 onChange={(e)=> setConfirmPassword(e.target.value)}></Form.Control>
             </Form.Group>
             <Button type='submit' variant='primary'>
-                Update
+                Modifica
             </Button>
         </Form>
       </Col>
       <Col md={9}>
-            <h2>My Orders</h2>
+            <h2>Comenzile mele</h2>
             {loadingOrders ? <Loader/> : errorOrders ? <Message variant='danger'>
                 {errorOrders}</Message>: (
                     <Table striped bordered hover responsive className='table-sm'>
                         <thead>
                             <tr>
                                 <th>ID</th>
-                                <th>DATE</th>
+                                <th>DATA</th>
                                 <th>TOTAL</th>
-                                <th>PAID</th>
-                                <th>DELIVERED</th>
+                                <th>PLATIT</th>
+                                <th>LIVRAT</th>
                                 <th></th>
                             </tr>
                         </thead>
@@ -137,7 +137,7 @@ const ProfileScreen = (location) => {
                                   )}</td>
                                   <td>
                                       <LinkContainer to={`/order/${order._id}`}>
-                                          <Button variant = 'light'>Details</Button>
+                                          <Button variant = 'light'>Detalii</Button>
                                       </LinkContainer>
                                   </td>
                               </tr>  

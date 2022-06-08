@@ -30,10 +30,10 @@ const ShippingScreen = ( ) => {
   return (
     <FormContainer>
       <CheckoutSteps step1 step2 />
-      <h1>Shipping</h1>
+      <h1>Livrare</h1>
       <Form onSubmit={submitHandler}>
         <Form.Group controlId='address'>
-          <Form.Label>Address</Form.Label>
+          <Form.Label>Adresa</Form.Label>
           <Form.Control
             type='text'
             placeholder='Enter address'
@@ -44,7 +44,7 @@ const ShippingScreen = ( ) => {
         </Form.Group>
 
         <Form.Group controlId='city'>
-          <Form.Label>City</Form.Label>
+          <Form.Label>Oras</Form.Label>
           <Form.Control
             type='text'
             placeholder='Enter city'
@@ -55,7 +55,7 @@ const ShippingScreen = ( ) => {
         </Form.Group>
 
         <Form.Group controlId='postalCode'>
-          <Form.Label>Postal Code</Form.Label>
+          <Form.Label>Cod Postal</Form.Label>
           <Form.Control
             type='text'
             placeholder='Enter postal code'
@@ -66,7 +66,7 @@ const ShippingScreen = ( ) => {
         </Form.Group>
 
         <Form.Group controlId='country'>
-          <Form.Label>Country</Form.Label>
+          <Form.Label>Tara</Form.Label>
           <Form.Control
             type='text'
             placeholder='Enter country'
@@ -76,8 +76,8 @@ const ShippingScreen = ( ) => {
           ></Form.Control>
         </Form.Group>
 
-        <Button type='submit' variant='primary'>
-          Continue
+        <Button type='submit' variant='success'>
+          Continua
         </Button>
       </Form>
     </FormContainer>

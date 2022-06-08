@@ -105,36 +105,36 @@ const ProductEditScreen = () => {
   
     <>
         <Link to='/admin/productList' className='btn btn-light my-3'>
-            Go Back
+            Inapoi
         </Link>
         <FormContainer>
-        <h1>Edit product</h1>
+        <h1>Editeaza produs</h1>
         {loadingUpdate && <Loader/>}
         {errorUpdate && <Message variant='danger'>{errorUpdate}</Message>}
         {loading ? <Loader /> : error ? <Message variant='danger'>{error}</Message>:(
             <Form onSubmit={submitHandler}>
             <Form.Group controlId='name'>
-                    <Form.Label>Name</Form.Label>
+                    <Form.Label>Nume</Form.Label>
                     <Form.Control 
                     type='name' 
-                    placeholder = "Enter name"
+                    placeholder = "Introdu nume"
                     value={name}
                     onChange={(e)=> setName(e.target.value)}></Form.Control>
                 </Form.Group>
                 <Form.Group controlId='price'>
-                    <Form.Label>Enter Price</Form.Label>
+                    <Form.Label>Pret</Form.Label>
                     <Form.Control 
                     type='number' 
-                    placeholder = "Enter price"
+                    placeholder = "Introdu pret"
                     value={price}
                     onChange={(e)=> setPrice(e.target.value)}></Form.Control>
                 </Form.Group>
     
                 <Form.Group controlId='image'>
-                <Form.Label>Image</Form.Label>
+                <Form.Label>Imagine</Form.Label>
                     <Form.Control 
                     type='text' 
-                    placeholder = "Enter image url"
+                    placeholder = "Introdu imagine"
                     value={image}
                     onChange={(e)=> setImage(e.target.value)}
                     ></Form.Control>
@@ -147,41 +147,41 @@ const ProductEditScreen = () => {
                 <Form.Label>Brand</Form.Label>
                     <Form.Control 
                     type='text' 
-                    placeholder = "Enter brand"
+                    placeholder = "Introdu brand"
                     value={brand}
                     onChange={(e)=> setBrand(e.target.value)}></Form.Control>
                 </Form.Group>
 
                 <Form.Group controlId='countInStock'>
-                    <Form.Label>Count in stock</Form.Label>
+                    <Form.Label>Numarul de produse in stoc</Form.Label>
                     <Form.Control 
                     type='number' 
-                    placeholder = "Enter countInStock"
+                    placeholder = "Introdu numarul de produse in stoc"
                     value={countInStock}
                     onChange={(e)=> setCountInStock(e.target.value)}></Form.Control>
                 </Form.Group>
     
                 <Form.Group controlId='category'>
-                <Form.Label>Category</Form.Label>
+                <Form.Label>Categoria</Form.Label>
                     <Form.Control 
                     type='text' 
-                    placeholder = "Enter Category"
+                    placeholder = "Introdu Categoria"
                     value={category}
                     onChange={(e)=> setCategory(e.target.value)}></Form.Control>
                 </Form.Group>
     
                 <Form.Group controlId='description'>
-                <Form.Label>Description</Form.Label>
+                <Form.Label>Descriere</Form.Label>
                     <Form.Control 
                     type='text' 
-                    placeholder = "Enter Description"
+                    placeholder = "Introdu Descrierea"
                     value={description}
                     onChange={(e)=> setDescription(e.target.value)}></Form.Control>
                 </Form.Group>
     
                 
                 <Button type='submit' variant='primary'>
-                    Update
+                    Modifica
                 </Button>
             </Form>
         )}

@@ -27,10 +27,10 @@ if(!shippingAddress){
   return (
     <FormContainer>
       <CheckoutSteps step1 step2 step3/>
-      <h1>Payment Method</h1>
+      <h1>Metoda De Plata</h1>
       <Form onSubmit={submitHandler}>
        <Form.Group>
-           <Form.Label as='legend'> Select Method
+           <Form.Label as='legend'> Selecteaza Metoda
            </Form.Label>
            <Col>
            <Form.Check 
@@ -39,6 +39,16 @@ if(!shippingAddress){
            id='PayPal' 
            name='paymentMethod' 
            value="PayPal" 
+           
+           onChange={(e)=> setPaymentMethod(e.target.value)}>
+
+           </Form.Check>
+           <Form.Check 
+           type='radio' 
+           label='Numerar' 
+           id='Numerar' 
+           name='paymentMethod' 
+           value="Numerar" 
            checked 
            onChange={(e)=> setPaymentMethod(e.target.value)}>
 
@@ -46,8 +56,8 @@ if(!shippingAddress){
           
            </Col>
        </Form.Group>
-        <Button type='submit' variant='primary' className="mt-3">
-          Continue
+        <Button type='submit' variant='success' className="mt-3">
+          Continua
         </Button>
       </Form>
     </FormContainer>
