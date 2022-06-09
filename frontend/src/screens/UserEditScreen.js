@@ -55,27 +55,27 @@ const UserEditScreen = () => {
   
     <>
         <Link to='/admin/userList' className='btn btn-light my-3'>
-            Go Back
+            Inapoi
         </Link>
         <FormContainer>
-        <h1>Edit user</h1>
+        <h1>Editeaza utilizator</h1>
         {loadingUpdate && <Loader/>}
         {errorUpdate && <Message variant='danger'>{errorUpdate}</Message>}
         {loading ? <Loader /> : error ? <Message variant='danger'>{error}</Message>:(
             <Form onSubmit={submitHandler}>
             <Form.Group controlId='name'>
-                    <Form.Label>Name</Form.Label>
+                    <Form.Label>Nume</Form.Label>
                     <Form.Control 
                     type='name' 
-                    placeholder = "Enter name"
+                    placeholder = "Introdu nume"
                     value={name}
                     onChange={(e)=> setName(e.target.value)}></Form.Control>
                 </Form.Group>
                 <Form.Group controlId='email'>
-                    <Form.Label>Email address</Form.Label>
+                    <Form.Label>Adresa de email</Form.Label>
                     <Form.Control 
                     type='email' 
-                    placeholder = "Enter email"
+                    placeholder = "Introdu Email"
                     value={email}
                     onChange={(e)=> setEmail(e.target.value)}></Form.Control>
                 </Form.Group>
@@ -83,15 +83,15 @@ const UserEditScreen = () => {
                 <Form.Group controlId='isAdmin'>
                     <Form.Check 
                     type='checkbox' 
-                    label='Is Admin'
+                    label='Este admin'
                     checked={isAdmin}
                     onChange={(e)=> setIsAdmin(e.target.checked)}
                     ></Form.Check>
                 </Form.Group>
     
                 
-                <Button type='submit' variant='primary'>
-                    Update
+                <Button type='submit' variant='success'>
+                    Modifica
                 </Button>
             </Form>
         )}
