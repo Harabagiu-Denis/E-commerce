@@ -7,7 +7,6 @@ import { addToCart, removeFromCart } from '../actions/cartActions'
 
 
 const CartScreen = () => {
-   
     const match = useParams()
     let navigate = useNavigate()
     const location =useLocation()
@@ -40,7 +39,6 @@ const CartScreen = () => {
             navigate('/login')
         }
     }
-
   return (
     <Row>
         <Col md={8}>
@@ -103,5 +101,4 @@ const CartScreen = () => {
     </Row>
   )
 }
-
 export default CartScreen
