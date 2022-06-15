@@ -13,7 +13,6 @@ const CheckoutSteps = ( { step1, step2, step3, step4} ) => {
                 </LinkContainer>
             ): <Nav.Link disabled>Autentificare</Nav.Link>}
         </Nav.Item>
-
         <Nav.Item>
             {step2 ? (
                 <LinkContainer to='/shipping'>
@@ -39,5 +38,4 @@ const CheckoutSteps = ( { step1, step2, step3, step4} ) => {
     </Nav>
   )
 }
-
 export default CheckoutSteps

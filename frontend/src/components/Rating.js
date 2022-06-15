@@ -1,19 +1,15 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-
 const Rating = ({value, text, color}) => {
   return (
     <div className='rating'>
         <span>
-            <i 
-            className={
+            <i className={ 
                 value >=1 
                 ? 'fa-duotone fa-star' 
                 : value>=0.5 
                 ? 'fa-duotone fa-star-half-stroke' 
                 : 'fa-regular fa-star'} 
-                
-
                 ></i>
         </span>
         <span>
@@ -24,8 +20,6 @@ const Rating = ({value, text, color}) => {
                 : value>=0.5 
                 ? 'fas fa-star-half-alt' 
                 : 'far fa-star'} 
-                
-
                 ></i>
         </span>
         <span>
@@ -36,8 +30,6 @@ const Rating = ({value, text, color}) => {
                 : value>=1.5 
                 ? 'fas fa-star-half-alt' 
                 : 'far fa-star'} 
-                
-
                 ></i>
         </span>
         <span>
@@ -48,7 +40,6 @@ const Rating = ({value, text, color}) => {
                 : value>=2.5 
                 ? 'fas fa-star-half-alt' 
                 : 'far fa-star'} 
-            
                 ></i>
         </span>
         <span>
@@ -59,8 +50,6 @@ const Rating = ({value, text, color}) => {
                 : value>=3.5 
                 ? 'fas fa-star-half-alt' 
                 : 'far fa-star'} 
-                
-
                 ></i>
         </span>
         <span>
@@ -71,20 +60,15 @@ const Rating = ({value, text, color}) => {
                 : value>=4.5 
                 ? 'fas fa-star-half-alt' 
                 : 'far fa-star'} 
-                
-
                 ></i>
         </span>
                <span>{text && text}</span> 
-    
     </div>
   )
 }
-
 Rating.defaultProps = {
     color: '#f8e825'
 }
-
 Rating.propTypes = {
     value: PropTypes.number.isRequired,
     text: PropTypes.string.isRequired,

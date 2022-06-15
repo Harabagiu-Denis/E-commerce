@@ -26,7 +26,6 @@ const ShippingScreen = ( ) => {
     dispatch(saveShippingAddress({ address, city, postalCode, country }))
     navigate('/payment')
   }
-
   return (
     <FormContainer>
       <CheckoutSteps step1 step2 />

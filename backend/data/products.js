@@ -1,9 +1,7 @@
-const products = [
-  {
-    name: 'Airpods Wireless Bluetooth Headphones',
+const products = [{
+    name: 'Casti Airpods Wireless Bluetooth ',
     image: '/images/airpods.jpg',
-    description:
-      'Bluetooth technology lets you connect it with compatible devices wirelessly High-quality AAC audio offers immersive listening experience Built-in microphone allows you to take calls while working',
+    description:'Tehnologia Bluetooth va permite sa il conectati fara fir cu dispozitive compatibile. Audio de inalta calitate ofera o experienta de ascultare captivanta.',
     brand: 'Apple',
     category: 'Electronics',
     price: 89.99,
@@ -12,12 +10,11 @@ const products = [
     numReviews: 12,
   },
   {
-    name: 'iPhone 11 Pro 256GB Memory',
+    name: 'iPhone 11 Pro 256GB Memorie',
     image: '/images/phone.jpg',
-    description:
-      'Introducing the iPhone 11 Pro. A transformative triple-camera system that adds tons of capability without complexity. An unprecedented leap in battery life',
+    description:'Va prezentam Iphone 11 Pro. Un sistem transformator cu trei camere, care adauga o capacitate de 256GB si un salt fara precedent in biata bateriei',
     brand: 'Apple',
-    category: 'Electronics',
+    category: 'Electronice',
     price: 599.99,
     countInStock: 7,
     rating: 4.0,
@@ -26,22 +23,20 @@ const products = [
   {
     name: 'Cannon EOS 80D DSLR Camera',
     image: '/images/camera.jpg',
-    description:
-      'Characterized by versatile imaging specs, the Canon EOS 80D further clarifies itself using a pair of robust focusing systems and an intuitive design',
+    description:'Noua camera cannon eos 80D va introduce intr-o lume in care nu veti mai putea face diferenta dintre o captura si viata reala',
     brand: 'Cannon',
-    category: 'Electronics',
+    category: 'Electronice',
     price: 929.99,
     countInStock: 5,
     rating: 3,
     numReviews: 12,
   },
   {
-    name: 'Sony Playstation 4 Pro White Version',
+    name: 'Sony Playstation 4 Pro Alb',
     image: '/images/playstation.jpg',
-    description:
-      'The ultimate home entertainment center starts with PlayStation. Whether you are into gaming, HD movies, television, music',
+    description:'Centrul suprem de divertisment incepe acasa impreuna cu PlayStation. Fie ca esti pasionat de jocuri, filme, televiziune sau muzica',
     brand: 'Sony',
-    category: 'Electronics',
+    category: 'Electronice',
     price: 399.99,
     countInStock: 11,
     rating: 5,
@@ -50,10 +45,9 @@ const products = [
   {
     name: 'Logitech G-Series Gaming Mouse',
     image: '/images/mouse.jpg',
-    description:
-      'Get a better handle on your games with this Logitech LIGHTSYNC gaming mouse. The six programmable buttons allow customization for a smooth playing experience',
+    description:'Cu acest mouse pentru jocuri Logitech  veti putea obtine un control mai bun asupra jocurilor dumneavoastra',
     brand: 'Logitech',
-    category: 'Electronics',
+    category: 'Electronice',
     price: 49.99,
     countInStock: 7,
     rating: 3.5,
@@ -62,15 +56,12 @@ const products = [
   {
     name: 'Amazon Echo Dot 3rd Generation',
     image: '/images/alexa.jpg',
-    description:
-      'Meet Echo Dot - Our most popular smart speaker with a fabric design. It is our most compact smart speaker that fits perfectly into small space',
+    description:'Faceti cunostinta cu Echo Dot -  cel mai popular difuzor inteligent cu un design din material textil. Este cel mai compact difuzor inteligent al nostru care se potriveste perfect in spatiul mic',
     brand: 'Amazon',
-    category: 'Electronics',
+    category: 'Electronice',
     price: 29.99,
     countInStock: 0,
     rating: 4,
     numReviews: 12,
-  },
-]
-
+  },]
 export default products

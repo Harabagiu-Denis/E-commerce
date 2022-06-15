@@ -3,9 +3,9 @@ import generateToken from '../utils/generateToken.js'
 import User from '../models/userModel.js'
 
 
-//@description Auth user & get token
-//@route POST /api/users/login
-//@access Public 
+//@descriere Autentificare utilizator si primire jeton
+//@ruta POST /api/users/login
+//@acces Public 
 
 
 const authUser = asyncHandler(async (req, res) =>{
@@ -29,7 +29,7 @@ const authUser = asyncHandler(async (req, res) =>{
 
 })
 
-//@description Register a new user
+//@descriere Register a new user
 //@route POST /api/users
 //@access Public 
 
@@ -66,7 +66,7 @@ const registerUser = asyncHandler(async (req, res) =>{
 
  })
 
-//@description Get user profile
+//@descriere Get user profile
 //@route POST /api/users/profile
 //@access PRIVATE 
 
@@ -88,7 +88,7 @@ const getUserProfile = asyncHandler(async (req, res) =>{
  })
 
 
-//@description Update user profile
+//@descriere Update user profile
 //@route Put /api/users/profile
 //@access PRIVATE 
 
@@ -119,7 +119,7 @@ const updateUserProfile = asyncHandler(async (req, res) =>{
  })
 
 
-//@description Get all users
+//@descriere Get all users
 //@route POST /api/users
 //@access PRIVATE/Admin 
 
@@ -129,7 +129,7 @@ const getUsers = asyncHandler(async (req, res) =>{
     res.json(users)
  })
 
-//@description Delete user
+//@descriere Delete user
 //@route Delete /api/users/:id
 //@access PRIVATE/Admin 
 
@@ -145,7 +145,7 @@ const deleteUser = asyncHandler(async (req, res) =>{
     }
  })
 
-//@description Get user by ID
+//@descriere Get user by ID
 //@route Delete /api/users/:id
 //@access PRIVATE/Admin 
 
@@ -161,7 +161,7 @@ const getUserById = asyncHandler(async (req, res) =>{
  })
 
 
- //@description Update user 
+ //@descriere Update user 
 //@route Put /api/users/:id
 //@access PRIVATE/ADMIN
 

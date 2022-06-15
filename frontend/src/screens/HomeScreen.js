@@ -7,8 +7,6 @@ import Loader from '../components/Loader'
 import { listProducts } from '../actions/productActions'
 import { useParams } from 'react-router-dom'
 import ProductCarousel from '../components/ProductCarousel'
-
-
 const HomeScreen = () => {
   const match= useParams()
 
@@ -24,8 +22,6 @@ const HomeScreen = () => {
     dispatch(listProducts(keyword))
 
   },[dispatch,keyword])
-
-  
   return (
     <>  
     {!keyword && <ProductCarousel/>}

@@ -6,16 +6,12 @@ import SearchBox from './SearchBox'
 import { logout } from '../actions/userActions'
 const Header = () => {
   const dispatch = useDispatch()
-
   const userLogin = useSelector(state => state.userLogin)
   const { userInfo } = userLogin
-
   const logoutHandler = () =>{
     dispatch(logout())
   }
-
-  return (
-    <header>
+  return (<header>
         <Navbar bg="dark" variant = 'dark' expand="lg" collapseOnSelect>
   <Container>
     <LinkContainer to ='/'>
@@ -26,23 +22,17 @@ const Header = () => {
     <SearchBox />
       <Nav className="ms-auto">
       <LinkContainer to ='/cart'>
-        <Nav.Link >
-          <i className='fas fa-shopping-cart'></i> Cos
-          </Nav.Link>
-          </LinkContainer>
-          {userInfo ? (
+        <Nav.Link ><i className='fas fa-shopping-cart'></i> Cos</Nav.Link>
+          </LinkContainer> {userInfo ? (
             <NavDropdown title={userInfo.name} id='username'>
               <LinkContainer to='/profile'>
                 <NavDropdown.Item>Profil</NavDropdown.Item>
               </LinkContainer>
-              <NavDropdown.Item onClick={logoutHandler}>
-                Deconectare
+              <NavDropdown.Item onClick={logoutHandler}> Deconectare
               </NavDropdown.Item>
             </NavDropdown>
           ) :  (<LinkContainer to ='/login'>
-          <Nav.Link>
-            <i className='fas fa-user'></i>Autentificare
-            </Nav.Link>
+          <Nav.Link><i className='fas fa-user'></i>Autentificare</Nav.Link>
             </LinkContainer>
             )}
          {userInfo && userInfo.isAdmin && (
@@ -56,15 +46,9 @@ const Header = () => {
            <LinkContainer to='/admin/orderList'>
              <NavDropdown.Item>Comenzi</NavDropdown.Item>
            </LinkContainer>
-          
          </NavDropdown>
-         )}
-      </Nav>
-    </Navbar.Collapse>
-  </Container>
-</Navbar>
+         )}</Nav></Navbar.Collapse></Container></Navbar>
     </header>
   )
 }
-
 export default Header
