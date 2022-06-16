@@ -1,10 +1,6 @@
+
 import asyncHandler from 'express-async-handler'
 import Product from '../models/productModel.js'
-
-//@description Fetch all products
-//@route Get /api/products
-//@access Public 
-
 
 const getProducts = asyncHandler(async (req, res) =>{
     const keyword = req.query.keyword ? {
@@ -13,17 +9,9 @@ const getProducts = asyncHandler(async (req, res) =>{
             $options:'i'
         }
     } : {} 
-
     const products = await Product.find({ ...keyword })
     res.json(products)
-
 })
-
-
-//@description Fetch all products
-//@route Get /api/products
-//@access Public 
-
 
 const getProductById = asyncHandler(async (req, res) =>{
     const product = await Product.findById(req.params.id)
@@ -36,8 +24,21 @@ const getProductById = asyncHandler(async (req, res) =>{
     }
 })
 
+
+//@description Fetch all products
+//@route Get /api/products
+//@access Public 
+
 //@description Delete a product
 //@route Delete /api/products/:id
+//@access Private/Admin
+
+//@description Fetch all products
+//@route Get /api/products
+//@access Public 
+
+//@description Create a product
+//@route POST /api/products
 //@access Private/Admin
 
 const deleteProduct = asyncHandler(async (req, res) =>{
@@ -51,11 +52,6 @@ const deleteProduct = asyncHandler(async (req, res) =>{
         throw new Error('Product not found')
     }
 })
-
-//@description Create a product
-//@route POST /api/products
-//@access Private/Admin
-
 const createProduct = asyncHandler(async (req, res) =>{
     const product = new Product({
         name:'Sample Name',
@@ -78,12 +74,13 @@ const createProduct = asyncHandler(async (req, res) =>{
 //@description Update a product
 //@route PUT /api/products/:id
 //@access Private/Admin
+//@description Get top rated products
+//@route PUT /api/products/top
+//@access Public
 
 const updateProduct = asyncHandler(async (req, res) =>{
     const {name,price,description,image,brand,category,countInStock,} =req.body
-
     const product = await Product.findById(req.params.id)
-
     if(product){
         product.name = name
         product.price = price
@@ -98,25 +95,15 @@ const updateProduct = asyncHandler(async (req, res) =>{
     }else{
         res.status(404)
         throw new Error('Product not found')
-    }
-
-  
-
-})
-
-
-//@description Get top rated products
-//@route PUT /api/products/top
-//@access Public
+    }})
 
 const getTopProducts = asyncHandler(async (req, res) =>{
     const products = await Product.find({}).sort({ rating:-1 }).limit(4)
 
     res.json(products)
     
-  
-
 })
 
 
-export {getProducts, getProductById, deleteProduct,createProduct,updateProduct,getTopProducts}
+export {getProducts, getProductById, deleteProduct,
+createProduct, updateProduct, getTopProducts}
